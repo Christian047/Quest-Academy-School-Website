@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Scroll Animation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+        }
+        #section1 { background-color: #3498db; }
+        #section2 { background-color: #e74c3c; }
+        #section3 { background-color: #2ecc71; }
+        #section4 { background-color: #f39c12; }
+
+/* --------------------Copy The animate section and add to Css----------------------------- */
+        .animate-section {
+            opacity: 0;
+            transform: translateY(100px) rotate(-5deg);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-section.animate {
+            opacity: 1;
+            transform: translateY(0) rotate(0);
+        }
+/* --------------------Copy The animate section and add to Css----------------------------- */
+    </style>
+</head>
+<body>
+    <div id="section1" class="section animate-section">
+        <h2>Section 1</h2>
+    </div>
+    <div id="section2" class="section animate-section">
+        <h2>Section 2</h2>
+    </div>
+    <div id="section3" class="section animate-section">
+        <h2>Section 3</h2>
+    </div>
+    <div id="section4" class="section animate-section">
+        <h2>Section 4</h2>
+    </div>
+
+    <script>
+        /* --------------------Copy The animate section and add to Javascript----------------------------- */
+        function animateSectionOnScroll() {
+            const sections = document.querySelectorAll('.animate-section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('animate');
+                } else {
+                    section.classList.remove('animate');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', animateSectionOnScroll);
+        // Trigger once on load to animate sections already in view
+        animateSectionOnScroll();
+
+        /* --------------------Copy The animate section and add to Css----------------------------- */
+    </script>
+</body>
+</html>
