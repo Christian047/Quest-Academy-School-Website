@@ -215,7 +215,7 @@ button.btn-primary {
   }
   
 .logo-placement{
-  height: 240px;
+  height: 200px;
   display: block;
   align-content: center;
   padding: 1rem;
@@ -229,7 +229,7 @@ button.btn-primary {
 
 
 .school-logo{
-  height: 200px;
+  max-height: 150px;
   width: auto;
   padding-top: 3rem;
 
