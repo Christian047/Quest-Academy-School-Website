@@ -37,7 +37,7 @@ body {
   height: 70px;
   bottom: 40px;
   right: 40px;
-  background-color: #25d366;
+  background-color: rgb(114, 1, 52);
   color: #fff;
   border-radius: 50px;
   text-align: center;
@@ -74,7 +74,6 @@ body {
   background-image: url("ask.jpg");
   background-size: cover;
   background-position: center;
-  height: 30rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -367,6 +366,12 @@ a {
 @media (max-width: 900px) {
   .mar {
       margin-top: 40px;
+  }
+
+  .background-images {
+
+    height: auto;
+
   }
 }
 
